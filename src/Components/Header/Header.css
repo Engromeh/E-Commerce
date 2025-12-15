@@ -72,3 +72,31 @@ background-color: var(--bg_color);
     align-items: center;
     font-size: 12px;
 }
+.Btn_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+padding: 0 175px;
+background-color: var(--main_color);
+}
+.Btn_header .Btn_header_link{
+    display: flex;
+    gap: 30px;
+    color: var(--white_color) !important;
+    font-weight: 500;   
+    padding: 12px 0;
+    cursor: pointer;
+    margin-right: 40%;
+}
+
+.nav_link {
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.nav_link:hover {
+  background-color: #0b5ed7; /* نفس تأثير الصورة */
+}
+
