@@ -4,7 +4,7 @@ const BtnHeader = () => {
   return (
     <div>
       
-      <h1>BtnHeader</h1>
+     
     </div>
   )
 }
