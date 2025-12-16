@@ -44,7 +44,6 @@ border: none;
 }
 a{
   text-decoration: none;
-  color: var(--color_heading);
 }
 .container{
   width: 90%;

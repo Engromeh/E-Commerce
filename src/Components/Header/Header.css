@@ -72,31 +72,135 @@ background-color: var(--bg_color);
     align-items: center;
     font-size: 12px;
 }
-.Btn_header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-padding: 0 175px;
-background-color: var(--main_color);
-}
+
 .Btn_header .Btn_header_link{
     display: flex;
-    gap: 30px;
+    gap: 25px;
     color: var(--white_color) !important;
     font-weight: 500;   
-    padding: 12px 0;
+    padding: 12px 65px;
     cursor: pointer;
     margin-right: 40%;
 }
 
+
+
+.dropdown_container{
+    display: flex;
+    align-items: center;
+}
+.Btn_header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 15px 30px;
+  background: var(--main_color);
+  position: relative;
+}
+
+/* Dropdown Button */
+.dropdown_container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1000;
+}
+
+.menu_icon {
+  font-size: 22px;
+  fill: var(--white_color);
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.Nav_links {
+  position: absolute;
+ top: 4rem;
+    left: 13rem;
+  background: #fff;
+  width: 230px;                /* رفيعة */
+  max-height: 300px;           /* عشان السكرول */
+  overflow-y: auto;
+
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+
+  padding: 0;                  /* مهم */
+}
+
+.Nav_links.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+/* Links */
 .nav_link {
-  padding: 12px 20px;
-  color: white;
+  display: block;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #333;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+
+  border-bottom: 1px solid #eee;   /* الخط بين كل عنصر */
+}
+
+.nav_link:last-child {
+  border-bottom: none;
 }
 
 .nav_link:hover {
-  background-color: #0b5ed7; /* نفس تأثير الصورة */
+  background: #820303;
 }
 
+.Nav_links::-webkit-scrollbar {
+  width: 6px;
+}
+
+.Nav_links::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 10px;
+}
+
+/* Header Links */
+
+
+/* Icons */
+.btnheader_icon {
+  display: flex;
+  gap: 15px;
+  margin-left: auto;
+}
+
+.btnheader_icon .icon svg{
+  font-size: 22px;
+  cursor: pointer;
+  fill: var(--white_color);
+}
+.nav-linkPage{
+    color: var(--white_color);
+    font-size: 17px;
+}
+.nav-linkPage:hover{
+    color: #820303;
+}
