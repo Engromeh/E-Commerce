@@ -1,0 +1,99 @@
+.top_slide {
+  position: relative;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border_color);
+  padding: 15px 20px 20px 0;
+}
+.top_slide::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  width: 100px;
+  height: 2px;
+  background-color: var(--main_color);
+}
+.top_slide h2 {
+  font-size: 30px;
+
+  color: var(--main_color);
+  margin-bottom: 10px;
+}
+.proudect {
+  width: 250px;
+  background-color: var(--white_color);
+  padding: 25px 15px;
+  border: 1px solid var(--border_color);
+  transition: 0.3s;
+  border-radius: 5px;
+  position: relative;
+}
+.proudect:hover {
+  border-color: var(--main_color);
+  box-shadow: 10 10px 15px rgba(0, 0, 0, 0.342);
+}
+
+.proudect .Stars {
+  display: flex;
+  gap: 5px;
+  color: gold !important;
+}
+
+.proudect .price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--main_color);
+}
+.proudect .proudect_img {
+  position: relative;
+  height: 180px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.proudect .proudect_img img {
+  height: 140px;
+  width: auto;
+}
+.proudect .name_proudect {
+  margin-bottom: 10px;
+  color: var(--color_heading);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.proudect .price {
+  font-weight: bold;
+  font-size: 20px;
+}
+.proudect .Icons_Proudect {
+  position: absolute;
+  top: 50%;
+  right: -30px; /* بره الصندوق */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.proudect:hover .Icons_Proudect {
+  right: 8px; /* تدخل جوه */
+  opacity: 1;
+}
+
+.proudect .Icons_Proudect span {
+  width: 40px;
+  height: 40px;
+  background-color: var(--bg_color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  cursor: pointer;
+}

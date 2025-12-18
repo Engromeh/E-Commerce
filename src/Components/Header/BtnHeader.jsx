@@ -23,8 +23,11 @@ const BtnHeader = () => {
         onClick={() => setOpen((prev) => !prev)}
       >
         <IoMenuSharp className="menu_icon" />
-        <p style={{color:"white"}}>Browse category</p>
-        <TiArrowSortedDown className={`arrow ${open ? "rotate" : ""}`} style={{fill:"white"}} />
+        <p style={{ color: "white" }}>Browse category</p>
+        <TiArrowSortedDown
+          className={`arrow ${open ? "rotate" : ""}`}
+          style={{ fill: "white" }}
+        />
       </div>
 
       {/* Dropdown Menu */}
@@ -42,18 +45,32 @@ const BtnHeader = () => {
       </div>
 
       {/* Header Links */}
-      <div className="Btn_header_link" >
-        <Link to="/" className="nav-linkPage" >Home</Link>
-        <Link to="/about" className="nav-linkPage">About Us</Link>
-        <Link to="/accessories" className="nav-linkPage">Accessories</Link>
-        <Link to="/blog" className="nav-linkPage">Blog</Link>
-        <Link to="/contact" className="nav-linkPage">Contact</Link>
+      <div className="Btn_header_link">
+        <Link to="/" className="nav-linkPage">
+          Home
+        </Link>
+        <Link to="/about" className="nav-linkPage">
+          About Us
+        </Link>
+        <Link to="/accessories" className="nav-linkPage">
+          Accessories
+        </Link>
+        <Link to="/blog" className="nav-linkPage">
+          Blog
+        </Link>
+        <Link to="/contact" className="nav-linkPage">
+          Contact
+        </Link>
       </div>
 
       {/* Icons */}
       <div className="btnheader_icon">
-        <div className="icon"><MdExitToApp /></div>
-        <div className="icon"><IoPersonAdd /></div>
+        <div className="icon">
+          <MdExitToApp />
+        </div>
+        <div className="icon">
+          <IoPersonAdd />
+        </div>
       </div>
     </div>
   );
