@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import "./SlideProudect.css";
 import Proudect from "./Proudect";
 import { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -10,12 +9,23 @@ import "swiper/css/navigation";
 
 const SlideProudect = ({titel , des, category}) => {
   const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
   fetch(`https://dummyjson.com/products/category/${category}`)
     .then(res => res.json())
-    .then(data => setProducts(data.products));
+    .then(data => {setProducts(data.products);  setLoading(false); });
 }, [category]);
+
+if (loading) {
+  return (
+    <div className="loader-container">
+      <div className="spinner"></div>
+    </div>
+  );
+}
+
 
   return (
     <div className="slide_proudect slide">

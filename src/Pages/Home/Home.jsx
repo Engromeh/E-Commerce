@@ -3,16 +3,7 @@ import HeroSlider from "../../Components/HeroSlider";
 import "./Home.css";
 import SlideProudect from "../../Components/SlideProudect/SlideProudect";
 const Home = () => {
-  const categores = [
-    "smartphones",
-    "mobile-accessories",
-    "laptops",
-    "tablets",
-    "sports-accessories",
-    "sunglasses",
-  ];
 
-  useEffect(() => {}, []);
   return (
     <div>
       <HeroSlider />

@@ -1,0 +1,185 @@
+/* ====== Loader ====== */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #eee;
+  border-top: 5px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ====== Page ====== */
+.Proudect_Detalis {
+  padding: 60px 0;
+}
+
+.Proudect_Detalis .container {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* ====== Images Section ====== */
+.Proudect_Detalis .IteamImg_Detalis {
+  flex: 1;
+}
+
+.Proudect_Detalis .MainImg {
+  width: 100%;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Proudect_Detalis .MainImg img {
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+}
+
+/* ====== Sub Images ====== */
+.Proudect_Detalis .SubImg {
+  display: flex;
+  gap: 15px;
+      justify-content: center;
+}
+
+.Proudect_Detalis  .SubImg img {
+     width: 150px;
+    height: 180px;
+  object-fit: contain;
+  border-radius: 8px;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.Proudect_Detalis .SubImg img:hover {
+  border-color: #007bff;
+  transform: scale(1.05);
+}
+
+/* ====== Details Section ====== */
+.Proudect_Detalis .IteamDetalis {
+  flex: 1;
+}
+
+.Proudect_Detalis .IteamDetalis .name {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.Proudect_Detalis  .Stars {
+  display: flex;
+  gap: 5px;
+  color: #f5a623;
+  margin-bottom: 15px;
+}
+
+.Proudect_Detalis.price {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 15px 0;
+}
+
+.Proudect_Detalis .description {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.Proudect_Detalis .IteamDetalis h5 {
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.Proudect_Detalis .IteamDetalis h5 span {
+  margin-left: 5px;
+  color: #007bff;
+}
+
+.Proudect_Detalis .IteamDetalis > span {
+  display: block;
+  margin-top: 20px;
+  color: #007bff;
+  font-weight: 500;
+}
+
+
+
+.actions {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Add To Cart */
+.add-to-cart-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #1e90ff;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 130px;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #187bcd;
+}
+
+.cart-icon {
+  font-size: 13px;
+}
+
+/* Heart Button */
+.wishlist-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wishlist-btn svg {
+  color: #999;
+  font-size: 15px;
+}
+
+.wishlist-btn:hover {
+  border-color: #ff4d4d;
+}
+
+.wishlist-btn:hover svg {
+  color: #ff4d4d;
+}
