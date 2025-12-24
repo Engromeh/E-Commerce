@@ -4,9 +4,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
-import contentImg1 from "../img/banner_Hero1.jpg";
-import contentImg2 from "../img/banner_Hero2.jpg";
-import contentImg3 from "../img/banner_Hero3.jpg";
+import contentImg1 from "../../img/banner_Hero1.jpg";
+import contentImg2 from "../../img/banner_Hero2.jpg";
+import contentImg3 from "../../img/banner_Hero3.jpg";
 const HeroSlider = () => {
   return (
     <div className="hero">
