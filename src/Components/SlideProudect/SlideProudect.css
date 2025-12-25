@@ -125,3 +125,22 @@
 }
 
 
+.proudect_img {
+  position: relative;
+}
+
+.in-cart-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: #e6f7e9;
+  color: #2e7d32;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 10;
+}
