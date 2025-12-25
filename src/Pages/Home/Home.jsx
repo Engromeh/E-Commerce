@@ -8,55 +8,55 @@ const Home = () => {
       <HeroSlider />
 
       <SlideProudect
-        titel="mobile"
+        titel="Mobile"
         des="Discover our latest collection of mobile products"
         category="smartphones"
       />
 
       <SlideProudect
-        titel="laptob"
+        titel="Laptob"
         des="Discover our latest collection of mobile products"
         category="laptops"
       />
 
       <SlideProudect
-        titel="mobile-accessories"
+        titel="Mobile-Accessories"
         des="Discover our latest collection of mobile products"
         category="mobile-accessories"
       />
 
       <SlideProudect
-        titel="sports-accessories"
+        titel="Sports-Accessories"
         des="Discover our latest collection of mobile products"
         category="sports-accessories"
       />
         <SlideProudect
-        titel="skin-care"
+        titel="Skin-Care"
         des="Discover our latest collection of mobile products"
         category="skin-care"
       />
         <SlideProudect
-        titel="sunglasses"
+        titel="Sunglasses"
         des="Discover our latest collection of mobile products"
         category="sunglasses"
       />
         <SlideProudect
-        titel="tops"
+        titel="Tops"
         des="Discover our latest collection of mobile products"
         category="tops"
       />
         <SlideProudect
-        titel="womens-jewellery"
+        titel="Womens-Jewellery"
         des="Discover our latest collection of mobile products"
         category="womens-jewellery"
       />
         <SlideProudect
-        titel="beauty"
+        titel="Beauty"
         des="Discover our latest collection of mobile products"
         category="beauty"
       />
        <SlideProudect
-        titel="fragrances"
+        titel="Fragrances"
         des="Discover our latest collection of mobile products"
         category="fragrances"
       />

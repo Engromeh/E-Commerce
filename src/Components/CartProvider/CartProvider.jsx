@@ -3,12 +3,13 @@ import { createContext } from "react";
 
 export const CartContext = createContext();
 const CartProvider = ({ children }) => {
-  // استرجاع العناصر من localStorage عند التحميل
+  // بتجيب ال العنصرمن لوكل استورتيجي وتحفظوا
   const [cartitems, setCartitems] = useState(() => {
     const savedCartItems = localStorage.getItem("cartitems");
     return savedCartItems ? JSON.parse(savedCartItems) : [];
   });
-  // حفظ العناصر في localStorage عند التغيير
+  // لما تعمل ريفرش تفضل حافظ علي العنصر
+  
   useEffect(() => {
     localStorage.setItem("cartitems", JSON.stringify(cartitems));
   }, [cartitems]);
