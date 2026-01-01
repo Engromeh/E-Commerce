@@ -4,6 +4,7 @@ import BtnHeader from './Components/Header/BtnHeader'
 import TopHeader from './Components/Header/TopHeader'
 import Home from './Pages/Home/Home'
 import ProudectDetalis from './Pages/ProudectDetalis/ProudectDetalis'
+import Cart from './Pages/Cart/Cart'
 
 function App() {
 
@@ -17,6 +18,8 @@ function App() {
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/product/:id' element={<ProudectDetalis/>}/>
+            <Route path='/cart' element={<Cart/>}/>
+
     </Routes>
      
     </>

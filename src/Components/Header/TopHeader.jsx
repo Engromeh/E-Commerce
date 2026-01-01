@@ -32,10 +32,13 @@ const TopHeader = () => {
             <FaRegHeart />
             <span className="Counter_icon">0</span>
           </div>
-          <div className="icon">
-            <TiShoppingCart />
+          <Link to="/cart">
+            <div className="icon">
+            <TiShoppingCart  style={{color:"black"}}/>
             <span className="Counter_icon">{cartitems.length}</span>
           </div>
+          </Link>
+          
         </div>
       </div>
     </div>
