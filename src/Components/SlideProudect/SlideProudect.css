@@ -144,3 +144,95 @@
   gap: 4px;
   z-index: 10;
 }
+
+/* Responsive Styles */
+
+@media (max-width: 992px) {
+  .top_slide h2 {
+    font-size: 24px;
+  }
+
+  .proudect {
+    width: 220px;
+    padding: 20px 12px;
+  }
+
+  .proudect .proudect_img {
+    height: 160px;
+  }
+
+  .proudect .proudect_img img {
+    height: 120px;
+  }
+
+  .proudect .price {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top_slide {
+    padding: 10px 10px 15px 0;
+  }
+
+  .top_slide h2 {
+    font-size: 22px;
+  }
+
+  .proudect {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  /* أيقونات المنتج تبقى ظاهرة */
+  .proudect .Icons_Proudect {
+    right: 8px;
+    opacity: 1;
+    top: auto;
+    bottom: 10px;
+    transform: none;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .proudect .Icons_Proudect span {
+    width: 36px;
+    height: 36px;
+  }
+
+  .swiper-slide {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .top_slide h2 {
+    font-size: 20px;
+  }
+
+  .proudect {
+    padding: 15px 10px;
+  }
+
+  .proudect .proudect_img {
+    height: 140px;
+  }
+
+  .proudect .proudect_img img {
+    height: 100px;
+  }
+
+  .proudect .price {
+    font-size: 16px;
+  }
+
+  .proudect .Stars {
+    font-size: 14px;
+  }
+
+  .in-cart-badge {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+}

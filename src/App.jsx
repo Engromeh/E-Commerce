@@ -15,6 +15,7 @@ function App() {
       <TopHeader/>
       <BtnHeader />
     </header>
+    
 <Toaster position="bottom-right"  toastOptions={{
   style:{
     background:"#e9e9e9",
@@ -22,6 +23,7 @@ function App() {
     padding:"15px"
   }
 }} />
+
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/product/:id' element={<ProudectDetalis/>}/>

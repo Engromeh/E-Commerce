@@ -17,7 +17,6 @@ const Proudect = ({ products }) => {
 
   const isInCart = cartitems.some((item) => item.id === products.id);
 
-
   // اشتغلنا علي لما تحط في الكارت  يطلع زي اشعار تحت كده ان اضاف
   const navigate = useNavigate();
   const handleAddToCart = () => {

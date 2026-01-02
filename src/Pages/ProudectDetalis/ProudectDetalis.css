@@ -183,3 +183,94 @@
 .wishlist-btn:hover svg {
   color: #ff4d4d;
 }
+
+/* ====== Responsive Styles ====== */
+@media (max-width: 480px) {
+  .Proudect_Detalis {
+    padding: 25px 0;
+  }
+
+  .Proudect_Detalis .MainImg img {
+    max-height: 220px;
+  }
+
+  .Proudect_Detalis .SubImg img {
+    width: 80px;
+    height: 100px;
+  }
+
+  .Proudect_Detalis .IteamDetalis .name {
+    font-size: 20px;
+  }
+
+  .Proudect_Detalis .description {
+    font-size: 14px;
+  }
+
+  .add-to-cart-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 768px) {
+  .Proudect_Detalis .container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .Proudect_Detalis .MainImg {
+    padding: 15px;
+  }
+
+  .Proudect_Detalis .MainImg img {
+    max-height: 260px;
+  }
+
+  .Proudect_Detalis .SubImg {
+    gap: 10px;
+  }
+
+  .Proudect_Detalis .SubImg img {
+    width: 100px;
+    height: 120px;
+  }
+
+  .Proudect_Detalis .IteamDetalis .name {
+    font-size: 22px;
+  }
+
+  .actions {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .Proudect_Detalis {
+    padding: 40px 0;
+  }
+
+  .Proudect_Detalis .container {
+    gap: 30px;
+  }
+
+  .Proudect_Detalis .MainImg img {
+    max-height: 300px;
+  }
+
+  .Proudect_Detalis .SubImg img {
+    width: 120px;
+    height: 150px;
+  }
+
+  .Proudect_Detalis .IteamDetalis .name {
+    font-size: 24px;
+  }
+}
