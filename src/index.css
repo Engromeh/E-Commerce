@@ -92,3 +92,35 @@ scale: 1.1;}
     transform: rotate(360deg);
   }
 }
+
+
+.stoost-wrapper {
+display: flex;
+align-items: center;
+gap: 20px;
+min-width: 300px;
+max-width: 300px;
+}
+.stoost-image{
+  width: auto;
+  height: 40px;
+  object-fit: cover;
+}
+.stoost-content{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+}
+.stoost-wrapper strong{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+}
+.stoost-content .btn{
+  margin-top: 5px;
+    font-size: 13px;
+
+}

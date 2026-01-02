@@ -5,6 +5,7 @@ import TopHeader from './Components/Header/TopHeader'
 import Home from './Pages/Home/Home'
 import ProudectDetalis from './Pages/ProudectDetalis/ProudectDetalis'
 import Cart from './Pages/Cart/Cart'
+import { Toaster } from 'react-hot-toast'
 
 function App() {
 
@@ -14,7 +15,13 @@ function App() {
       <TopHeader/>
       <BtnHeader />
     </header>
-
+<Toaster position="bottom-right"  toastOptions={{
+  style:{
+    background:"#e9e9e9",
+    borderRadius:"5px",
+    padding:"15px"
+  }
+}} />
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/product/:id' element={<ProudectDetalis/>}/>
