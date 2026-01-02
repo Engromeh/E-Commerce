@@ -4,10 +4,10 @@ import { MdDelete } from "react-icons/md";
 import "./Cart.css";
 
 const Cart = () => {
-  const { cartitems } = useContext(CartContext);
+  const { cartitems , Incrense, Decrense , DeletItem } = useContext(CartContext);
 // هنا بحسب توتال الاسعار بتاعت المنتجات اللي في الكارت
   const total = cartitems.reduce(
-    (acc, item) => acc + item.price,
+    (acc, item) => acc + item.price * item.Quantity,
     0
   );
 
@@ -27,14 +27,14 @@ const Cart = () => {
               <p>${item.price}</p>
 
               <div className="Quality_contral" >
-              <button className="quality_btn">-</button>
-              <span className="quality_number">1</span>
-              <button className="quality_btn">+</button>
+              <button className="quality_btn" onClick={() => Decrense(item.id)}>-</button>
+              <span className="quality_number">{item.Quantity}</span>
+              <button className="quality_btn" onClick={() => Incrense(item.id)}>+</button>
             </div>
             </div>
             
 
-            <button className="delete-btn">
+            <button className="delete-btn" onClick={() => DeletItem(item.id)}>
               <MdDelete />
             </button>
           </div>

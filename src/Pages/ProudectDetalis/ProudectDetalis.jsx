@@ -1,25 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ProudectDetalis.css";
 import { FaRegStarHalfStroke, FaStar } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 import { TiShoppingCart } from "react-icons/ti";
 import SlideProudect from "../../Components/SlideProudect/SlideProudect";
+import { CartContext } from "../../Components/CartProvider/CartProvider";
 
 const ProudectDetalis = () => {
+  const { addcartitem, cartitems } = useContext(CartContext);
   const { id } = useParams();
+
   const [productsDetalis, setproductsDetalis] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [mainImg, setMainImg] = useState("");
+
+  const isInCart =
+    productsDetalis &&
+    cartitems.some((item) => item.id === productsDetalis.id);
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setproductsDetalis(data);
+        setMainImg(data.images[0]);
         setLoading(false);
       });
   }, [id]);
-  console.log(productsDetalis);
 
   if (loading) {
     return (
@@ -31,37 +39,31 @@ const ProudectDetalis = () => {
 
   return (
     <>
-      {/* هنا جزي الصور و الاسوتش اللي بينهما*/}
-
+      {/* Product Details */}
       <div className="Proudect_Detalis">
         <div className="container">
+          {/* Images Section */}
           <div className="IteamImg_Detalis">
             <div className="MainImg">
-              <img
-                id="Big_image"
-                src={productsDetalis.images[0]}
-                alt={productsDetalis.title}
-              />
+              <img src={mainImg} alt={productsDetalis.title} />
             </div>
+
             <div className="SubImg">
               {productsDetalis.images.map((img, index) => (
                 <img
                   key={index}
                   src={img}
                   alt={productsDetalis.title}
-                  onClick={() =>
-                    (document.getElementById("Big_image").src = img)
-                  }
+                  onClick={() => setMainImg(img)}
                 />
               ))}
             </div>
           </div>
 
-          
-          {/* هنا الديتلز كلها بتاعت المنتج*/}
-
+          {/* Product Info */}
           <div className="IteamDetalis">
             <h1 className="name">{productsDetalis.title}</h1>
+
             <div className="Stars">
               <FaStar />
               <FaStar />
@@ -72,29 +74,36 @@ const ProudectDetalis = () => {
 
             <p className="price">Price: ${productsDetalis.price}</p>
             <p className="description">{productsDetalis.description}</p>
-            <h5>
-              Availability:<span>{productsDetalis.availabilityStatus}</span>
-            </h5>
-            <h5>
-              Brand:<span>{productsDetalis.brand}</span>
-            </h5>
-            <span> Hurry Up! Only {productsDetalis.stock} left in stock!</span>
 
-            {/* هنا الزرارير */}
+            <h5>
+              Availability:
+              <span>{productsDetalis.availabilityStatus}</span>
+            </h5>
 
+            <h5>
+              Brand:
+              <span>{productsDetalis.brand}</span>
+            </h5>
+
+            <span className="stock">
+              Hurry Up! Only {productsDetalis.stock} left in stock!
+            </span>
+
+            {/* Actions */}
             <div className="actions">
-              <button className="add-to-cart-btn">
-                <p
-                  style={{
-                    fontSize: "13px",
-                    color: "white",
-                    fontWeight: "bold",
-                  }}
+              {!isInCart ? (
+                <button
+                  className="add-to-cart-btn"
+                  onClick={() => addcartitem(productsDetalis)}
                 >
-                  Add To Cart
-                </p>
-                <TiShoppingCart className="cart-icon" />
-              </button>
+                  <span>Add To Cart</span>
+                  <TiShoppingCart className="cart-icon" />
+                </button>
+              ) : (
+                <button className="add-to-cart-btn disabled" disabled>
+                  In Cart
+                </button>
+              )}
 
               <button className="wishlist-btn">
                 <FaHeart />
@@ -104,10 +113,9 @@ const ProudectDetalis = () => {
         </div>
       </div>
 
-      {/* بنادي علي السلايدر اللي ليها علاقة بالمنتج الللي هخش عليها */}
-
+      {/* Related Products Slider */}
       <SlideProudect
-        titel={`${productsDetalis.category}`}
+        titel={productsDetalis.category}
         category={productsDetalis.category}
         currentId={productsDetalis.id}
       />
