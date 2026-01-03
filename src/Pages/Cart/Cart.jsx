@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { CartContext } from "../../Components/CartProvider/CartProvider";
 import { MdDelete } from "react-icons/md";
 import "./Cart.css";
+import PageTransation from "../../Components/Other_Style/PageTransation";
 
 const Cart = () => {
   const { cartitems , Incrense, Decrense , DeletItem } = useContext(CartContext);
@@ -12,7 +13,8 @@ const Cart = () => {
   );
 
   return (
-    <div className="cart-wrapper">
+    <PageTransation>
+      <div className="cart-wrapper">
       <h2 className="cart-title">Order Summary</h2>
 
       <div className="cart-items">
@@ -48,6 +50,8 @@ const Cart = () => {
 
       <button className="order-btn">Place order</button>
     </div>
+    </PageTransation>
+    
   );
 };
 

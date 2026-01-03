@@ -6,7 +6,7 @@ import Home from './Pages/Home/Home'
 import ProudectDetalis from './Pages/ProudectDetalis/ProudectDetalis'
 import Cart from './Pages/Cart/Cart'
 import { Toaster } from 'react-hot-toast'
-import ScorllTop from './Components/ScorllTop/ScorllTop'
+import ScorllTop from './Components/Other_Style/ScorllTop'
 import { AnimatePresence } from 'framer-motion'
 
 function App() {

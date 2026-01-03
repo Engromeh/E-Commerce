@@ -1,10 +1,12 @@
 import HeroSlider from "../../Components/HeroSlider/HeroSlider";
 import "./Home.css";
 import SlideProudect from "../../Components/SlideProudect/SlideProudect";
+import PageTransation from "../../Components/Other_Style/PageTransation";
 const Home = () => {
 
   return (
-    <div>
+    <PageTransation>
+        <div>
       <HeroSlider />
 
       <SlideProudect
@@ -61,6 +63,8 @@ const Home = () => {
         category="fragrances"
       />
     </div>
+    </PageTransation>
+  
   );
 };
 

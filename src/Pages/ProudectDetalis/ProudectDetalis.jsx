@@ -6,6 +6,7 @@ import SlideProudect from "../../Components/SlideProudect/SlideProudect";
 import { CartContext } from "../../Components/CartProvider/CartProvider";
 import ProudectDetalis_Image from "./ProudectDetalis_Image";
 import ProudectDetalis_text from "./ProudectDetalis_text";
+import PageTransation from "../../Components/Other_Style/PageTransation";
 
 const ProudectDetalis = () => {
   const { addcartitem, cartitems } = useContext(CartContext);
@@ -38,6 +39,7 @@ const ProudectDetalis = () => {
 
   return (
     <>
+    <PageTransation key={id}>
       {/* Product Details */}
       <div className="Proudect_Detalis">
         <div className="container">
@@ -63,6 +65,7 @@ const ProudectDetalis = () => {
         category={productsDetalis.category}
         currentId={productsDetalis.id}
       />
+      </PageTransation>
     </>
   );
 };
