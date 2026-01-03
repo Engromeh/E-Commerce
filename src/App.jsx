@@ -7,6 +7,7 @@ import ProudectDetalis from './Pages/ProudectDetalis/ProudectDetalis'
 import Cart from './Pages/Cart/Cart'
 import { Toaster } from 'react-hot-toast'
 import ScorllTop from './Components/ScorllTop/ScorllTop'
+import { AnimatePresence } from 'framer-motion'
 
 function App() {
 
@@ -25,12 +26,15 @@ function App() {
   }
 }} />
 <ScorllTop />
-    <Routes>
+<AnimatePresence mode='wait'>
+ <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/product/:id' element={<ProudectDetalis/>}/>
             <Route path='/cart' element={<Cart/>}/>
 
     </Routes>
+</AnimatePresence>
+   
      
     </>
   )
