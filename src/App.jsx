@@ -6,6 +6,7 @@ import Home from './Pages/Home/Home'
 import ProudectDetalis from './Pages/ProudectDetalis/ProudectDetalis'
 import Cart from './Pages/Cart/Cart'
 import { Toaster } from 'react-hot-toast'
+import ScorllTop from './Components/ScorllTop/ScorllTop'
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
     padding:"15px"
   }
 }} />
-
+<ScorllTop />
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/product/:id' element={<ProudectDetalis/>}/>
