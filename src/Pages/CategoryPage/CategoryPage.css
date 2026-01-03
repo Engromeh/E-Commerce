@@ -1,0 +1,7 @@
+.proudect-category{
+    padding: 55px 90px;
+    display: flex;
+    align-self: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}

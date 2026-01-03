@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { IoMenuSharp } from "react-icons/io5";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { MdExitToApp } from "react-icons/md";
 import { IoPersonAdd } from "react-icons/io5";
 
 const BtnHeader = () => {
+  const location = useLocation();
   const [category, setCategory] = useState([]);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
+    setOpen(false);
+  }, [location]);
+
+  
+  useEffect(() => {
+  
     fetch("https://dummyjson.com/products/categories")
       .then((res) => res.json())
       .then((data) => setCategory(data));
@@ -35,7 +42,7 @@ const BtnHeader = () => {
         {category.map((item) => (
           <Link
             key={item.slug}
-            to={item.slug}
+            to={`/category/${item.slug}`}
             className="nav_link"
             onClick={() => setOpen(false)}
           >

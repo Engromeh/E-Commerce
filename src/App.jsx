@@ -8,6 +8,7 @@ import Cart from './Pages/Cart/Cart'
 import { Toaster } from 'react-hot-toast'
 import ScorllTop from './Components/Other_Style/ScorllTop'
 import { AnimatePresence } from 'framer-motion'
+import CategoryPage from './Pages/CategoryPage/CategoryPage'
 
 function App() {
 
@@ -30,6 +31,8 @@ function App() {
  <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/product/:id' element={<ProudectDetalis/>}/>
+            <Route path='/category/:category' element={<CategoryPage/>}/>
+
             <Route path='/cart' element={<Cart/>}/>
 
     </Routes>
