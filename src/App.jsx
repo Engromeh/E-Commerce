@@ -9,6 +9,7 @@ import { Toaster } from 'react-hot-toast'
 import ScorllTop from './Components/Other_Style/ScorllTop'
 import { AnimatePresence } from 'framer-motion'
 import CategoryPage from './Pages/CategoryPage/CategoryPage'
+import SearchResult from './Pages/SearchResult/SearchResult'
 
 function App() {
 
@@ -34,6 +35,8 @@ function App() {
             <Route path='/category/:category' element={<CategoryPage/>}/>
 
             <Route path='/cart' element={<Cart/>}/>
+                        <Route path='/search' element={<SearchResult/>}/>
+
 
     </Routes>
 </AnimatePresence>

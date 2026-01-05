@@ -6,6 +6,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { TiShoppingCart } from "react-icons/ti";
 import "./Header.css";
 import { CartContext } from "../CartProvider/CartProvider";
+import SearchBox from "../SearchBar/SearchBox";
 
 const TopHeader = () => {
   const{cartitems}=useContext(CartContext)
@@ -16,17 +17,7 @@ const TopHeader = () => {
           <img src={Logo} alt="Logo" style={{width:"120px"}} />
         </Link>
 
-        <form action="" className="Search_box">
-          <input
-            type="text"
-            name="search"
-            id="search"
-            placeholder="search for proudect"
-          />
-          <button type="submit">
-            <FaSearch />
-          </button>
-        </form>
+    <SearchBox/>
         <div className="header_icon">
           <div className="icon">
             <FaRegHeart />
