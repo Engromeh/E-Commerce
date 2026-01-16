@@ -10,6 +10,7 @@ import ScorllTop from './Components/Other_Style/ScorllTop'
 import { AnimatePresence } from 'framer-motion'
 import CategoryPage from './Pages/CategoryPage/CategoryPage'
 import SearchResult from './Pages/SearchResult/SearchResult'
+import Favlist from './Components/Favlist/Favlist'
 
 function App() {
 
@@ -36,6 +37,9 @@ function App() {
 
             <Route path='/cart' element={<Cart/>}/>
                         <Route path='/search' element={<SearchResult/>}/>
+                                                <Route path='/Favlist' element={<Favlist/>}/>
+
+
 
 
     </Routes>

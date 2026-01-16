@@ -19,10 +19,14 @@ const TopHeader = () => {
 
     <SearchBox/>
         <div className="header_icon">
+        <Link to="/Favlist">
+
           <div className="icon">
-            <FaRegHeart />
+            <FaRegHeart style={{color:"black"}} />
             <span className="Counter_icon">{favitems.length}</span>
           </div>
+          </Link>
+
           <Link to="/cart">
             <div className="icon">
             <TiShoppingCart  style={{color:"black"}}/>
