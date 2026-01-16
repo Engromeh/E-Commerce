@@ -5,6 +5,7 @@ import { TiShoppingCart } from "react-icons/ti";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import "./Favlist.css";
+import PageTransation from "../Other_Style/PageTransation";
 
 const Favlist = () => {
   const { favitems, removeFavitem, addcartitem, cartitems } =
@@ -17,6 +18,7 @@ const Favlist = () => {
   }
 
   return (
+    <PageTransation>
     <div className="wishlist-container">
       <h2>Your Favorites ❤️</h2>
       <div className="wishlist-grid">
@@ -58,6 +60,7 @@ const Favlist = () => {
         })}
       </div>
     </div>
+    </PageTransation>
   );
 };
 

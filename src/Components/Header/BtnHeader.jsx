@@ -56,12 +56,12 @@ const BtnHeader = () => {
         <Link to="/" className="nav-linkPage">
           Home
         </Link>
-        <Link to="/about" className="nav-linkPage">
-          Omar
+        <Link to="/about-us" className="nav-linkPage">
+          About Us
         </Link>
-        <Link to="/accessories" className="nav-linkPage">
+        {/* <Link to="/accessories" className="nav-linkPage">
           Accessories
-        </Link>
+        </Link> */}
         <Link to="/blog" className="nav-linkPage">
           Blog
         </Link>
