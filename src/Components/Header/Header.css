@@ -164,7 +164,7 @@
 }
 
 .nav_link:hover {
-  background: #820303;
+  background: var(--main_color);
 }
 
 .Nav_links::-webkit-scrollbar {
@@ -195,7 +195,7 @@
   font-size: 17px;
 }
 .nav-linkPage:hover {
-  color: #820303;
+  color: var(--color_heading);
 }
 
 

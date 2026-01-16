@@ -57,7 +57,7 @@ const BtnHeader = () => {
           Home
         </Link>
         <Link to="/about" className="nav-linkPage">
-          About Us
+          Omar
         </Link>
         <Link to="/accessories" className="nav-linkPage">
           Accessories

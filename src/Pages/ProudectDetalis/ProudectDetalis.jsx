@@ -9,7 +9,14 @@ import ProudectDetalis_text from "./ProudectDetalis_text";
 import PageTransation from "../../Components/Other_Style/PageTransation";
 
 const ProudectDetalis = () => {
-  const { addcartitem, cartitems } = useContext(CartContext);
+  const {
+    addcartitem,
+    cartitems,
+    favitems,
+    addFavitem,
+    removeFavitem,
+  } = useContext(CartContext);
+
   const { id } = useParams();
 
   const [productsDetalis, setproductsDetalis] = useState(null);
@@ -17,7 +24,12 @@ const ProudectDetalis = () => {
   const [mainImg, setMainImg] = useState("");
 
   const isInCart =
-    productsDetalis && cartitems.some((item) => item.id === productsDetalis.id);
+    productsDetalis &&
+    cartitems.some((item) => item.id === productsDetalis.id);
+
+  const isInFav =
+    productsDetalis &&
+    favitems.some((item) => item.id === productsDetalis.id);
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${id}`)
@@ -38,35 +50,32 @@ const ProudectDetalis = () => {
   }
 
   return (
-    <>
     <PageTransation key={id}>
-      {/* Product Details */}
       <div className="Proudect_Detalis">
         <div className="container">
-          {/* Images Section */}
-
           <ProudectDetalis_Image
             productsDetalis={productsDetalis}
             mainImg={mainImg}
             setMainImg={setMainImg}
           />
-          {/* Product Info */}
+
           <ProudectDetalis_text
             productsDetalis={productsDetalis}
             isInCart={isInCart}
             addcartitem={addcartitem}
+            isInFav={isInFav}
+            addFavitem={addFavitem}
+            removeFavitem={removeFavitem}
           />
         </div>
       </div>
 
-      {/* Related Products Slider */}
       <SlideProudect
         titel={productsDetalis.category}
         category={productsDetalis.category}
         currentId={productsDetalis.id}
       />
-      </PageTransation>
-    </>
+    </PageTransation>
   );
 };
 

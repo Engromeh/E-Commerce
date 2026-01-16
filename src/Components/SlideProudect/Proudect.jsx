@@ -7,14 +7,19 @@ import { FaShare } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import CartProvider, { CartContext } from "../CartProvider/CartProvider";
 import toast from "react-hot-toast";
+import { FaHeart } from "react-icons/fa";
+
+import "./SlideProudect.css";
 
 {
   /* بجيب البروبس هنا بقاا */
 }
 
 const Proudect = ({ products }) => {
-  const { addcartitem, cartitems } = useContext(CartContext);
+  const { addcartitem, cartitems, addFavitem, favitems, removeFavitem } =
+    useContext(CartContext);
 
+  const isInFav = favitems.some((item) => item.id === products.id);
   const isInCart = cartitems.some((item) => item.id === products.id);
 
   // اشتغلنا علي لما تحط في الكارت  يطلع زي اشعار تحت كده ان اضاف
@@ -38,6 +43,14 @@ const Proudect = ({ products }) => {
       </div>,
       { duration: 4000 }
     );
+  };
+
+  const handleFavToggle = () => {
+    if (isInFav) {
+      removeFavitem(products.id);
+    } else {
+      addFavitem(products);
+    }
   };
 
   return (
@@ -64,9 +77,13 @@ const Proudect = ({ products }) => {
             <FaCartArrowDown />
           </span>
         )}
-        <span>
-          <FaRegHeart />
+        <span
+          className={`fav-icon ${isInFav ? "active" : ""}`}
+          onClick={handleFavToggle}
+        >
+          {isInFav ? <FaHeart /> : <FaRegHeart />}
         </span>
+
         <span>
           <FaShare />
         </span>

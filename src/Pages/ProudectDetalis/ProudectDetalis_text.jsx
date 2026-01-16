@@ -1,14 +1,21 @@
-import React from 'react'
+import React from "react";
 import { FaRegStarHalfStroke, FaStar } from "react-icons/fa6";
 import { FaHeart } from "react-icons/fa";
 import { TiShoppingCart } from "react-icons/ti";
-import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
-const ProudectDetalis_text = ({ productsDetalis, isInCart, addcartitem }) => {
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
-    const navigate =useNavigate();
+const ProudectDetalis_text = ({
+  productsDetalis,
+  isInCart,
+  addcartitem,
+  isInFav,
+  addFavitem,
+  removeFavitem,
+}) => {
+  const navigate = useNavigate();
 
-     const handleAddToCartDetalis = () => {
+  const handleAddToCartDetalis = () => {
     addcartitem(productsDetalis);
 
     toast.success(
@@ -29,59 +36,51 @@ const ProudectDetalis_text = ({ productsDetalis, isInCart, addcartitem }) => {
       { duration: 4000 }
     );
   };
+
+  const handleFavToggleDetalis = () => {
+    if (isInFav) {
+      removeFavitem(productsDetalis.id);
+    } else {
+      addFavitem(productsDetalis);
+    }
+  };
+
   return (
-    <>
-      <div className="IteamDetalis">
-            <h1 className="name">{productsDetalis.title}</h1>
+    <div className="IteamDetalis">
+      <h1 className="name">{productsDetalis.title}</h1>
 
-            <div className="Stars">
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaRegStarHalfStroke />
-            </div>
+      <div className="Stars">
+        <FaStar />
+        <FaStar />
+        <FaStar />
+        <FaStar />
+        <FaRegStarHalfStroke />
+      </div>
 
-            <p className="price">Price: ${productsDetalis.price}</p>
-            <p className="description">{productsDetalis.description}</p>
+      <p className="price">${productsDetalis.price}</p>
+      <p className="description">{productsDetalis.description}</p>
 
-            <h5>
-              Availability:
-              <span>{productsDetalis.availabilityStatus}</span>
-            </h5>
+      <div className="actions">
+        {!isInCart ? (
+          <button className="add-to-cart-btn" onClick={handleAddToCartDetalis}>
+            <TiShoppingCart />
+            Add To Cart
+          </button>
+        ) : (
+          <button className="add-to-cart-btn disabled" disabled>
+            In Cart
+          </button>
+        )}
 
-            <h5>
-              Brand:
-              <span>{productsDetalis.brand}</span>
-            </h5>
+        <button
+          className={`wishlist-btn ${isInFav ? "active" : ""}`}
+          onClick={handleFavToggleDetalis}
+        >
+          <FaHeart />
+        </button>
+      </div>
+    </div>
+  );
+};
 
-            <span className="stock">
-              Hurry Up! Only {productsDetalis.stock} left in stock!
-            </span>
-
-            {/* Actions */}
-            <div className="actions">
-              {!isInCart ? (
-                <button
-                  className="add-to-cart-btn"
-                  onClick={() => handleAddToCartDetalis()}
-                >
-                  <span>Add To Cart</span>
-                  <TiShoppingCart className="cart-icon" />
-                </button>
-              ) : (
-                <button className="add-to-cart-btn disabled" disabled>
-                  In Cart
-                </button>
-              )}
-
-              <button className="wishlist-btn">
-                <FaHeart />
-              </button>
-            </div>
-          </div>
-    </>
-  )
-}
-
-export default ProudectDetalis_text
+export default ProudectDetalis_text;

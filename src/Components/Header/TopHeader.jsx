@@ -9,7 +9,7 @@ import { CartContext } from "../CartProvider/CartProvider";
 import SearchBox from "../SearchBar/SearchBox";
 
 const TopHeader = () => {
-  const{cartitems}=useContext(CartContext)
+  const{cartitems , favitems}=useContext(CartContext)
   return (
     <div className="top_header">
       <div className="container">
@@ -21,7 +21,7 @@ const TopHeader = () => {
         <div className="header_icon">
           <div className="icon">
             <FaRegHeart />
-            <span className="Counter_icon">0</span>
+            <span className="Counter_icon">{favitems.length}</span>
           </div>
           <Link to="/cart">
             <div className="icon">
