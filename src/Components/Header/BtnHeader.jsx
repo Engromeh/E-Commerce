@@ -72,11 +72,17 @@ const BtnHeader = () => {
 
       {/* Icons */}
       <div className="btnheader_icon">
+
+      
         <div className="icon">
+        <Link to="/login">
           <MdExitToApp />
+</Link>
         </div>
         <div className="icon">
+        <Link to="/register">
           <IoPersonAdd />
+</Link>
         </div>
       </div>
     </div>
