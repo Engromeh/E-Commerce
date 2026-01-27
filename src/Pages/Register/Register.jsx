@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Register.css";
+import Logo from "../../img/Romeh-removebg-preview.png"; // نفس اللوجو
 
 const Register = () => {
   const [form, setForm] = useState({
@@ -42,6 +43,9 @@ const Register = () => {
   return (
     <div className="register-page">
       <form className="register-box" onSubmit={handleSubmit}>
+        {/* Logo فوق كلمة Create Account */}
+        <img src={Logo} alt="Logo" className="register-logo" />
+
         <h2>Create Account</h2>
 
         {error && <p className="register-error">{error}</p>}
@@ -50,18 +54,14 @@ const Register = () => {
           type="email"
           placeholder="Email"
           value={form.email}
-          onChange={(e) =>
-            setForm({ ...form, email: e.target.value })
-          }
+          onChange={(e) => setForm({ ...form, email: e.target.value })}
         />
 
         <input
           type="password"
           placeholder="Password"
           value={form.password}
-          onChange={(e) =>
-            setForm({ ...form, password: e.target.value })
-          }
+          onChange={(e) => setForm({ ...form, password: e.target.value })}
         />
 
         <input
@@ -73,11 +73,10 @@ const Register = () => {
           }
         />
 
-<Link to="/login">
         <button type="submit">Register</button>
-</Link>
+
         <p>
-         Do you have an account?<Link to="/login">Login</Link>
+          Do you have an account? <Link to="/login">Login</Link>
         </p>
       </form>
     </div>

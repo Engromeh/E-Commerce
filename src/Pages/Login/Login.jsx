@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import './Login.css'
+import './Login.css';
+import Logo from "../../img/Romeh-removebg-preview.png";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,37 +31,38 @@ const Login = () => {
     alert("Login Success ✅");
   };
 
- return (
-  <div className="login-page">
-    <form className="login-box" onSubmit={handleSubmit}>
-      <h2>Login</h2>
+  return (
+    <div className="login-page">
+      <form className="login-box" onSubmit={handleSubmit}>
+        {/* Logo فوق كلمة Login */}
+        <img src={Logo} alt="Logo" className="login-logo" />
 
-      {error && <p className="login-error">{error}</p>}
+        <h2>Login</h2>
 
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
+        {error && <p className="login-error">{error}</p>}
 
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-<Link to="/">
-      <button>Login</button>
-</Link>
-      <p>
-       Don't you have an account? <Link to="/register">Register</Link>
-      </p>
-    </form>
-  </div>
-);
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
+        <button type="submit">Login</button>
+
+        <p>
+          Don't you have an account? <Link to="/register">Register</Link>
+        </p>
+      </form>
+    </div>
+  );
 };
 
 export default Login;

@@ -7,7 +7,7 @@
 
 .register-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f3443, #34e89e);
+  background: linear-gradient(135deg, #141e30, #0090f0);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,6 +19,13 @@
   padding: 30px;
   border-radius: 14px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Logo */
+.register-logo {
+  width: 120px;
+  display: block;
+  margin: 0 auto 15px auto;
 }
 
 .register-box h2 {
@@ -37,14 +44,14 @@
 }
 
 .register-box input:focus {
-  border-color: #34e89e;
+  border-color: #0090f0;
   outline: none;
 }
 
 .register-box button {
   width: 100%;
   padding: 14px;
-  background: #34e89e;
+  background: #0090f0;
   color: #0f3443;
   border: none;
   border-radius: 8px;
@@ -55,7 +62,8 @@
 }
 
 .register-box button:hover {
-  background: #2ecc71;
+  background: #141e30;
+  color: #fff;
 }
 
 .register-error {
