@@ -14,12 +14,9 @@ import Contact from "./Pages/OtherPages/Contact";
 import AboutUs from "./Pages/OtherPages/Aboutus";
 import Blog from "./Pages/OtherPages/Blog";
 import Accessories from "./Pages/OtherPages/Accessories";
-import Login from "./Pages/Login/Login";
-import Register from "./Pages/Register/Register";
+
 import MainLayout from "./Layout/MainLayout ";
-import AuthLayout from "./Layout/AuthLayout";
 import OrderSuccess from "./Pages/OrderSuccess/OrderSuccess";
-import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -38,11 +35,8 @@ function App() {
       <AnimatePresence mode="wait">
         <Routes>
 
-          {/* Auth pages (NO HEADER) */}
-          <Route element={<AuthLayout />}>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-          </Route>
+
+          
 
           {/* Main website (WITH HEADER) */}
           <Route element={<MainLayout />}>
