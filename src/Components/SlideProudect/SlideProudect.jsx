@@ -43,7 +43,7 @@ const SlideProudect = ({ titel, des, category, currentId }) => {
         <Swiper
           loop={true}
           autoplay={{
-            delay: 3500,
+            delay: 1800,
             disableOnInteraction: false,
           }}
           slidesPerView={5}

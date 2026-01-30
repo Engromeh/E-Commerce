@@ -1,56 +1,64 @@
-import React, { useEffect, useState } from "react";
-import { createContext } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
+// 🌟 إنشاء Context
 export const CartContext = createContext();
+
 const CartProvider = ({ children }) => {
-  // بتجيب ال العنصرمن لوكل استورتيجي وتحفظوا
+  // 🛒 Cart
   const [cartitems, setCartitems] = useState(() => {
-    const savedCartItems = localStorage.getItem("cartitems");
-    return savedCartItems ? JSON.parse(savedCartItems) : [];
+    const saved = localStorage.getItem("cartitems");
+    return saved ? JSON.parse(saved) : [];
   });
 
-  // المفضله
+  // ❤️ Favorites
   const [favitems, setfavitems] = useState(() => {
-    const savedFavItems = localStorage.getItem("Favitems");
-    return savedFavItems ? JSON.parse(savedFavItems) : [];
+    const saved = localStorage.getItem("favitems");
+    return saved ? JSON.parse(saved) : [];
   });
 
-  const addFavitem = (item) => {
-    setfavitems((prevItems) => {
-      const exists = prevItems.some((favitem) => favitem.id === item.id);
-      if (exists) return prevItems; // ⛔ منع التكرار
+  // 🛍️ Orders
+  const [orders, setOrders] = useState(() => {
+    const saved = localStorage.getItem("orders");
+    return saved ? JSON.parse(saved) : [];
+  });
 
-      return [...prevItems, item];
-    });
-  };
-    const removeFavitem = (id) => {
-    setfavitems((prev) => prev.filter((item) => item.id !== id));
-  };
-  useEffect(() => {
-    localStorage.setItem("favitems", JSON.stringify(favitems));
-  }, [favitems]);
-
-
-  // دي الفانكشن اللي بتضيف العنصر للكارت
-  const addcartitem = (item) => {
-    setCartitems((prevItems) => [...prevItems, { ...item, Quantity: 1 }]);
-  };
-  // لما تعمل ريفرش تفضل حافظ علي العنصر
+  /* ================== Effects ================== */
   useEffect(() => {
     localStorage.setItem("cartitems", JSON.stringify(cartitems));
   }, [cartitems]);
 
-  // لما عايز ازود او انقص من الكميه اللي في المارت في بعمل التو فانكشن دول وابعتهم لل صفحة الكارت
+  useEffect(() => {
+    localStorage.setItem("favitems", JSON.stringify(favitems));
+  }, [favitems]);
+
+  useEffect(() => {
+    localStorage.setItem("orders", JSON.stringify(orders));
+  }, [orders]);
+
+  /* ================== Cart Functions ================== */
+  const addcartitem = (item) => {
+    setCartitems((prev) => {
+      const exists = prev.find((i) => i.id === item.id);
+      if (exists) {
+        return prev.map((i) =>
+          i.id === item.id ? { ...i, Quantity: i.Quantity + 1 } : i
+        );
+      }
+      return [...prev, { ...item, Quantity: 1 }];
+    });
+  };
+
   const Incrense = (id) => {
-    setCartitems((prevItems) =>
-      prevItems.map((item) =>
+    setCartitems((prev) =>
+      prev.map((item) =>
         item.id === id ? { ...item, Quantity: item.Quantity + 1 } : item
       )
     );
   };
+
   const Decrense = (id) => {
-    setCartitems((prevItems) =>
-      prevItems.map((item) =>
+    setCartitems((prev) =>
+      prev.map((item) =>
         item.id === id && item.Quantity > 1
           ? { ...item, Quantity: item.Quantity - 1 }
           : item
@@ -58,28 +66,46 @@ const CartProvider = ({ children }) => {
     );
   };
 
-  // دي فانكشن لحذف العنصر من الكارت
-  const DeletItem = (id) => {
-    setCartitems((prevItems) => prevItems.filter((item) => item.id !== id));
+  const DeletItem = (id) => setCartitems((prev) => prev.filter((item) => item.id !== id));
+  const ClearCart = () => setCartitems([]);
+
+  /* ================== Favorites Functions ================== */
+  const addFavitem = (item) => {
+    setfavitems((prev) => {
+      const exists = prev.some((fav) => fav.id === item.id);
+      if (exists) return prev;
+      return [...prev, item];
+    });
   };
 
+  const removeFavitem = (id) => setfavitems((prev) => prev.filter((item) => item.id !== id));
+
+  /* ================== Orders Functions ================== */
+  const addOrder = (order) => setOrders((prev) => [...prev, order]);
+
+  /* ================== Provider ================== */
   return (
-    <>
-      <CartContext.Provider
-        value={{
-          cartitems,
-          addcartitem,
-          Incrense,
-          Decrense,
-          DeletItem,
-          favitems,
-          addFavitem,
-          removeFavitem
-        }}
-      >
-        {children}
-      </CartContext.Provider>
-    </>
+    <CartContext.Provider
+      value={{
+        cartitems,
+        favitems,
+        orders,
+        setOrders,
+
+        addcartitem,
+        Incrense,
+        Decrense,
+        DeletItem,
+        ClearCart,
+
+        addFavitem,
+        removeFavitem,
+
+        addOrder,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
   );
 };
 

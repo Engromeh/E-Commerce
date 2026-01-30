@@ -18,6 +18,8 @@ import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
 import MainLayout from "./Layout/MainLayout ";
 import AuthLayout from "./Layout/AuthLayout";
+import OrderSuccess from "./Pages/OrderSuccess/OrderSuccess";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -53,6 +55,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/order-success" element={<OrderSuccess />} />
+
             <Route path="/accessories" element={<Accessories />} />
           </Route>
 

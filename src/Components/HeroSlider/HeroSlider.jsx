@@ -14,7 +14,7 @@ const HeroSlider = () => {
         <Swiper
           loop={true}
           autoplay={{
-            delay: 3500,
+            delay: 1500,
             disableOnInteraction: false,
           }}
           pagination={true}

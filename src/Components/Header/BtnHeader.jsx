@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { IoMenuSharp } from "react-icons/io5";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { MdExitToApp } from "react-icons/md";
 import { IoPersonAdd } from "react-icons/io5";
 
 const BtnHeader = () => {
-  const location = useLocation();
+  // const location = useLocation();
   const [category, setCategory] = useState([]);
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    setOpen(false);
-  }, [location]);
+  // useEffect(() => {
+  //   setOpen(false);
+  // }, [location]);
 
   
   useEffect(() => {
@@ -70,21 +70,7 @@ const BtnHeader = () => {
         </Link>
       </div>
 
-      {/* Icons */}
-      <div className="btnheader_icon">
-
-      
-        <div className="icon">
-        <Link to="/login">
-          <MdExitToApp />
-</Link>
-        </div>
-        <div className="icon">
-        <Link to="/register">
-          <IoPersonAdd />
-</Link>
-        </div>
-      </div>
+     
     </div>
   );
 };
