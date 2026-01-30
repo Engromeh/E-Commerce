@@ -9,13 +9,8 @@ import ProudectDetalis_text from "./ProudectDetalis_text";
 import PageTransation from "../../Components/Other_Style/PageTransation";
 
 const ProudectDetalis = () => {
-  const {
-    addcartitem,
-    cartitems,
-    favitems,
-    addFavitem,
-    removeFavitem,
-  } = useContext(CartContext);
+  const { addcartitem, cartitems, favitems, addFavitem, removeFavitem } =
+    useContext(CartContext);
 
   const { id } = useParams();
 
@@ -24,12 +19,10 @@ const ProudectDetalis = () => {
   const [mainImg, setMainImg] = useState("");
 
   const isInCart =
-    productsDetalis &&
-    cartitems.some((item) => item.id === productsDetalis.id);
+    productsDetalis && cartitems.some((item) => item.id === productsDetalis.id);
 
   const isInFav =
-    productsDetalis &&
-    favitems.some((item) => item.id === productsDetalis.id);
+    productsDetalis && favitems.some((item) => item.id === productsDetalis.id);
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${id}`)
